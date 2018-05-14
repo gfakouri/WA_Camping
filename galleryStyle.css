@@ -1,4 +1,7 @@
-    body,
+
+
+
+body,
     html {
         height: 100%;
         margin: 0;
@@ -91,68 +94,131 @@
                                 "photo4 photo4 photo2 photo8"
                                 "photo6 photo7 photo7 photo8";
         padding: 20px;
+
         }
+
+    .photo1, .photo2, .photo3, .photo4, .photo5, .photo6, .photo7, .photo8 {
+        background-size: cover;
+        background-position: center;
+        outline: 1px solid #282e34;
+        outline-offset: 5px;
+    }
         
     .photo1 {
         grid-area: photo1;
         background: url("/camping_images/beach1.jpg");
+        min-height: 200px;
         background-size: cover;
         background-position: center;
-        min-height: 200px;
     }
     
     .photo2 {
         grid-area: photo2;
         background: url("/camping_images/trees1.jpg");
+        min-height: 600px;
         background-size: cover;
         background-position: center;
-        min-height: 600px;
     }
     
     .photo3 {
         grid-area: photo3;
         background: url("/camping_images/me_dogs.jpg");
+        min-height: 200px;
         background-size: cover;
         background-position: center;
-        min-height: 200px;
     }
     
     .photo4 {
         grid-area: photo4;
         background: url("/camping_images/troopy.jpg");
+        min-height: 400px;
         background-size: cover;
         background-position: center;
-        min-height: 400px;
     }
     
     .photo5 {
         grid-area: photo5;
         background: url("/camping_images/lake.jpg");
+        min-height: 200px;
         background-size: cover;
         background-position: center;
-        min-height: 200px;
-    }
+        }
     
     .photo6 {
         grid-area: photo6;
         background: url("/camping_images/dogs.jpg");
+        min-height: 200px;
+        outline-offset: 5px;
         background-size: cover;
         background-position: center;
-        min-height: 200px;
     }
     
     .photo7 {
         grid-area: photo7;
         background: url("/camping_images/beach2.jpg");
+        min-height: 200px;
         background-size: cover;
         background-position: center;
-        min-height: 200px;
     }
     
     .photo8 {
         grid-area: photo8;
         background: url("/camping_images/trees2.jpg");
+        min-height: 200px;
         background-size: cover;
         background-position: center;
-        min-height: 200px;
+    }
+
+    .ptext {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: #000;
+        font-size: 27px;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        transition: 1s;
+    }
+    
+    .ptext .border {
+        background-color: #282e34;
+        color: #fff;
+        padding: 20px;
+        outline: 1px solid #282e34;
+        outline-offset: 5px;
+
+    }
+    
+    .highlight {
+        color: green;
+    }
+
+    @media(max-width:569px) {
+   
+        .navbar-nav {
+            display: none;
+        }
+
+        .photo-container {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-areas:    "photo1"
+                                    "photo2"
+                                    "photo3"
+                                    "photo4"
+                                    "photo5"
+                                    "photo6"
+                                    "photo7"
+                                    "photo8";
+
+            
+            padding: 20px;
+            }
+
+            .ptext {
+                font-size: 16px;
+                letter-spacing: 4px;
+                transition: 0.5s;
+            }
     }
