@@ -57,7 +57,7 @@ html {
     font-size: 27px;
     letter-spacing: 8px;
     text-transform: uppercase;
-    outline: 1px solid #2a3138;
+    outline: 3px solid #2a3138;
     outline-offset: 0px;
 }
 
@@ -167,7 +167,7 @@ html {
     background-color: #282e34;
     color: #fff;
     padding: 20px;
-    outline: 1px solid #282e34;
+    outline: 3px solid #282e34;
     outline-offset: 5px;
 }
 
