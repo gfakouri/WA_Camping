@@ -11,13 +11,62 @@
     <style>
 
         #map {         
-        height:450px;
-        width: 75%;
-        border-style: solid;
-        border-width: 5px;
-        margin: 10px;
-        margin: auto;       
+            height:450px;
+            width: 75%;
+            border-style: solid;
+            border-width: 5px;
+            margin: 10px;
+            margin: auto;       
         }
+
+        #main-footer {
+            padding: 2em;
+            background: #282e34;
+            color: #b8c3bb;
+            font-size: 18px;
+            display: flex;
+            justify-content: right;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h1 {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            text-align: center;
+            background-color: #282e34;
+            color: #fff;
+            padding: 20px;
+            outline: 3px solid #282e34;
+            outline-offset: 5px;
+            font-size: 27px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            transition: 1s;
+        }
+
+    @media(max-width:569px){ 
+
+    .navbar-nav {
+        display: none;
+    }
+
+    h1 {
+        font-size: 16px;
+        letter-spacing: 4px;
+        transition: 0.5s;
+    }
+
+    #map {
+        height: 350px;
+    }
+    
+}
+
         
     </style>
 
@@ -84,7 +133,7 @@
                 }
             </script>
 
-    <h1>My Google Map</h1>
+    <h1><span class="border">Our Adventures</span></h1>
     <div id="map"></div>
     
     <script>
@@ -461,10 +510,6 @@
             ]
             }
 
-
-
-
-
             // ARRAY OF MARKERS - LOCATION, ICON TYPE, MESSAGE BOX
             var markers = [
                 {
@@ -542,6 +587,12 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLEi9Ee0AeZLdcztm3jV4UilOe_TrnhQU&callback=initMap">
     </script>
+
+   
+
+    <footer id="main-footer" class="grid">
+            <div>COPYRIGHT &copy;, LIKE ANY IDEAS HERE ARE MINE. </div>
+    </footer>
 
 </body>
 </html>
