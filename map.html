@@ -11,7 +11,7 @@
     <style>
 
         #map {         
-        height:400px;
+        height:450px;
         width: 75%;
         border-style: solid;
         border-width: 5px;
@@ -90,6 +90,7 @@
     <script>
 
         function initMap(){
+
             // Map options
             var options = {
                 zoom:5,
@@ -417,7 +418,7 @@
                     "elementType": "labels",
                     "stylers": [
                         {
-                            "visibility": "off"
+                            "visibility": "on"
                         }
                     ]
                 },
@@ -426,7 +427,7 @@
                     "elementType": "labels.text",
                     "stylers": [
                         {
-                            "visibility": "off"
+                            "visibility": "on"
                         }
                     ]
                 },
@@ -435,7 +436,7 @@
                     "elementType": "labels.text.fill",
                     "stylers": [
                         {
-                            "visibility": "off"
+                            "visibility": "on"
                         }
                     ]
                 },
@@ -444,7 +445,7 @@
                     "elementType": "labels.text.stroke",
                     "stylers": [
                         {
-                            "visibility": "off"
+                            "visibility": "on"
                         }
                     ]
                 },
@@ -453,31 +454,15 @@
                     "elementType": "labels.icon",
                     "stylers": [
                         {
-                            "visibility": "off"
+                            "visibility": "on"
                         }
                     ]
                 }
             ]
             }
 
-            //CHANGE CENTRE LOCATION OF MAP CENTRE
-            function myFunction(x) {
-                if (x.matches) { // If media query matches
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                    options,
-                    center:{lat:-27.782387, lng:117.8605},                
-                    });
-                } else {
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                    options,
-                    center:{lat:-27.782387, lng:128.607513},                
-                    });
-                }
-            }
-            
-            var x = window.matchMedia("(max-width: 800px)")
-            myFunction(x) // Call listener function at run time
-            x.addListener(myFunction) // Attach listener function on state changes
+
+
 
 
             // ARRAY OF MARKERS - LOCATION, ICON TYPE, MESSAGE BOX
@@ -496,7 +481,11 @@
                 coords:{lat:42.7762,lng:-71.0773}
                 }
             ];
-
+            
+            var map = new google.maps.Map(document.getElementById('map'), {
+                    options,
+                    center:{lat:-26.782387, lng:118.607513},                
+                    });
 
             // LOOP THROUGH ARRAY ADDING MARKERS
             for(var i = 0;i < markers.length;i++){
@@ -512,7 +501,6 @@
                 position:props.coords,
                 map:map,
                 icon:props.iconImage,
-
                 });
 
                 //CREATE INFO WINDOW FOR MARKER
@@ -524,9 +512,30 @@
                 marker.addListener('click', function(){
                 infoWindow.open(map, marker);
                 });
-
             }
+
+  /*          function myFunction(x) {
+                if (x.matches) { // If media query matches
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                    options,
+                    center:{lat:-27.782387, lng:117.8605},                
+                    });
+         
+                } else {
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                    options,
+                    center:{lat:-27.782387, lng:128.607513},                
+                    });
+  
+                }
+            }
+            
+            var x = window.matchMedia("(max-width: 700px)")
+            myFunction(x) // Call listener function at run time
+            x.addListener(myFunction) // Attach listener function on state changes
+*/
         }
+
     </script>
 
     <!--GOOGLE API SETUP WITH KEY-->    
