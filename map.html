@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map</title>
+    <link rel="stylesheet" href="campingStyle.css">
+
+    <style>
+
+        #map {         
+        height:400px;
+        width: 50%;
+        border-style: solid;
+        border-width: 5px;
+        margin: 10px;
+        margin: auto;
+        
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+        <nav id="top-menu" class="navbar">
+                <span class="open-slide">
+                <a href="#" onclick="openSlideMenu()">
+                    <svg width = "30" height = "50">
+                        <path d = "M0, 5 30, 5" stroke = "#fff" stroke-width = "5"/>
+                        <path d = "M0, 14 30, 14" stroke = "#fff" stroke-width = "5"/>
+                        <path d = "M0, 23 30, 23" stroke = "#fff" stroke-width = "5"/>
+                        <path d = "M0, 32 30, 32" stroke = "#fff" stroke-width = "5"/>
+                        <path d = "M0, 41 30, 41" stroke = "#fff" stroke-width = "5"/>
+                    </svg>
+                </a>
+            </span>
+        
+                <ul class="navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="map.html">Map</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+        
+            </nav>
+        
+            <div id="side-menu" class="side-nav">
+                <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+                <a href="index.html">Home</a>
+                <a href="map.html">Map</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+        
+            <!--
+        
+        <div id="main">
+            <h1>Responsive Side Menu</h1>
+        </div>
+        
+        -->
+        
+            <script>
+                function openSlideMenu() {
+                    document.getElementById("side-menu").style.width = "250px";
+                    document.getElementById("side-menu").style.outlineOffset = "5px";
+                    document.getElementById("side-menu").style.margin = "10px";
+                    //document.getElementById("main").style.marginLeft = "250px";
+                    document.getElementById("top-menu").style.height = "0px";
+                    document.getElementById("top-menu").style.margin = "0px";
+        
+                }
+        
+                function closeSlideMenu() {
+                    document.getElementById("side-menu").style.width = "0px";
+                    document.getElementById("side-menu").style.outlineOffset = "0px";
+                    document.getElementById("side-menu").style.margin = "0px";
+                    //document.getElementById("main").style.marginLeft = "0px";
+                    document.getElementById("top-menu").style.height = "63px";
+                    document.getElementById("top-menu").style.margin = "5px";
+                }
+            </script>
+
+    <h1>My Google Map</h1>
+    <div id="map"></div>
+    
+    <script>
+
+        function initMap(){
+            // Map options
+            var options = {
+                zoom:5,
+                center:{lat:-28.782387, lng:114.607513}
+            }
+
+            // New map
+            var map = new google.maps.Map(document.getElementById('map'), options);    
+            
+    // ARRAY OF MARKERS - LOCATION, ICON TYPE, MESSAGE BOX
+        var markers = [
+            {
+            coords:{lat:-31.953512, lng:115.857048},
+            iconImage:"/icons/beach_icon2.png",
+            content:'<h1>Lynn MA</h1>'
+            },
+            {
+            coords:{lat:-28.782387, lng:114.607513},
+            iconImage:"/icons/beach_icon2.png",
+            content:'<h1>Amesbury MA</h1>'
+            },
+            {
+            coords:{lat:42.7762,lng:-71.0773}
+            }
+        ];
+
+
+    // LOOP THROUGH ARRAY ADDING MARKERS
+        for(var i = 0;i < markers.length;i++){
+            // Add marker
+            addMarker(markers[i]);
+        }     
+
+
+    //ADD MARKER FUNCTION
+            function addMarker(props){
+
+                var marker = new google.maps.Marker({
+                position:props.coords,
+                map:map,
+                icon:props.iconImage,
+
+                });
+
+    //CREATE INFO WINDOW FOR MARKER
+                var infoWindow = new google.maps.InfoWindow({
+                content:props.content
+                });
+
+    //ALLOW WINDOW TO APPEAR ON MOUSECLICK
+                marker.addListener('click', function(){
+                infoWindow.open(map, marker);
+                });
+
+            }
+        }
+    </script>
+
+    <!--GOOGLE API SETUP WITH KEY-->    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLEi9Ee0AeZLdcztm3jV4UilOe_TrnhQU&callback=initMap">
+    </script>
+
+</body>
+</html>
