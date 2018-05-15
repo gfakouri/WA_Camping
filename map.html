@@ -7,16 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Map</title>
     <link rel="stylesheet" href="campingStyle.css">
+    <script src="assassin.js"></script>
 
     <style>
 
         #map {         
-            height:450px;
+            height:600px;
             width: 75%;
             border-style: solid;
             border-width: 5px;
             margin: 10px;
-            margin: auto;       
+            margin: 50px auto auto auto;       
         }
 
         #main-footer {
@@ -26,10 +27,8 @@
             font-size: 18px;
             display: flex;
             justify-content: right;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
+            margin-top: 100px;
+
         }
 
         h1 {
@@ -62,7 +61,7 @@
     }
 
     #map {
-        height: 350px;
+        height: 450px;
     }
     
 }
@@ -136,6 +135,7 @@
     <h1><span class="border">Our Adventures</span></h1>
     <div id="map"></div>
     
+
     <script>
 
         function initMap(){
@@ -529,7 +529,8 @@
             
             var map = new google.maps.Map(document.getElementById('map'), {
                     options,
-                    center:{lat:-26.782387, lng:118.607513},                
+                    center:{lat:-26.782387, lng:118.607513},
+                    gestureHandling: 'greedy'               
                     });
 
             // LOOP THROUGH ARRAY ADDING MARKERS
