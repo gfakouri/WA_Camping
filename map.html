@@ -12,12 +12,11 @@
 
         #map {         
         height:400px;
-        width: 50%;
+        width: 75%;
         border-style: solid;
         border-width: 5px;
         margin: 10px;
-        margin: auto;
-        
+        margin: auto;       
         }
         
     </style>
@@ -94,38 +93,120 @@
             // Map options
             var options = {
                 zoom:5,
-                center:{lat:-28.782387, lng:114.607513}
+                center:{lat:-27.782387, lng:128.607513}
             }
 
             // New map
-            var map = new google.maps.Map(document.getElementById('map'), options);    
-            
-    // ARRAY OF MARKERS - LOCATION, ICON TYPE, MESSAGE BOX
-        var markers = [
-            {
-            coords:{lat:-31.953512, lng:115.857048},
-            iconImage:"/icons/beach_icon2.png",
-            content:'<h1>Lynn MA</h1>'
-            },
-            {
-            coords:{lat:-28.782387, lng:114.607513},
-            iconImage:"/icons/beach_icon2.png",
-            content:'<h1>Amesbury MA</h1>'
-            },
-            {
-            coords:{lat:42.7762,lng:-71.0773}
-            }
-        ];
+            var map = new google.maps.Map(document.getElementById('map'), {
+                options,
+                styles: [
+                    {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+                    {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+                    {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+                    {
+                    featureType: 'administrative.locality',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#d59563'}]
+                    },
+                    {
+                    featureType: 'poi',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#d59563'}]
+                    },
+                    {
+                    featureType: 'poi.park',
+                    elementType: 'geometry',
+                    stylers: [{color: '#263c3f'}]
+                    },
+                    {
+                    featureType: 'poi.park',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#6b9a76'}]
+                    },
+                    {
+                    featureType: 'road',
+                    elementType: 'geometry',
+                    stylers: [{color: '#38414e'}]
+                    },
+                    {
+                    featureType: 'road',
+                    elementType: 'geometry.stroke',
+                    stylers: [{color: '#212a37'}]
+                    },
+                    {
+                    featureType: 'road',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#9ca5b3'}]
+                    },
+                    {
+                    featureType: 'road.highway',
+                    elementType: 'geometry',
+                    stylers: [{color: '#746855'}]
+                    },
+                    {
+                    featureType: 'road.highway',
+                    elementType: 'geometry.stroke',
+                    stylers: [{color: '#1f2835'}]
+                    },
+                    {
+                    featureType: 'road.highway',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#f3d19c'}]
+                    },
+                    {
+                    featureType: 'transit',
+                    elementType: 'geometry',
+                    stylers: [{color: '#2f3948'}]
+                    },
+                    {
+                    featureType: 'transit.station',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#d59563'}]
+                    },
+                    {
+                    featureType: 'water',
+                    elementType: 'geometry',
+                    stylers: [{color: '#2152BD'}]
+                    },
+                    {
+                    featureType: 'water',
+                    elementType: 'labels.text.fill',
+                    stylers: [{color: '#515c6d'}]
+                    },
+                    {
+                    featureType: 'water',
+                    elementType: 'labels.text.stroke',
+                    stylers: [{color: '#17263c'}]
+                    }
+                ]
+        });
+
+            // ARRAY OF MARKERS - LOCATION, ICON TYPE, MESSAGE BOX
+            var markers = [
+                {
+                coords:{lat:-31.953512, lng:115.857048},
+                iconImage:"/icons/beach_icon2.png",
+                content:'<h1>Lynn MA</h1>'
+                },
+                {
+                coords:{lat:-28.782387, lng:114.607513},
+                iconImage:"/icons/beach_icon2.png",
+                content:'<h1>Amesbury MA</h1>'
+                },
+                {
+                coords:{lat:42.7762,lng:-71.0773}
+                }
+            ];
 
 
-    // LOOP THROUGH ARRAY ADDING MARKERS
-        for(var i = 0;i < markers.length;i++){
-            // Add marker
-            addMarker(markers[i]);
-        }     
+            // LOOP THROUGH ARRAY ADDING MARKERS
+            for(var i = 0;i < markers.length;i++){
+                // Add marker
+                addMarker(markers[i]);
+            }     
 
 
-    //ADD MARKER FUNCTION
+            //ADD MARKER FUNCTION
             function addMarker(props){
 
                 var marker = new google.maps.Marker({
@@ -135,15 +216,20 @@
 
                 });
 
-    //CREATE INFO WINDOW FOR MARKER
+                //CREATE INFO WINDOW FOR MARKER
                 var infoWindow = new google.maps.InfoWindow({
                 content:props.content
                 });
 
-    //ALLOW WINDOW TO APPEAR ON MOUSECLICK
+                //ALLOW WINDOW TO APPEAR ON MOUSECLICK
                 marker.addListener('click', function(){
                 infoWindow.open(map, marker);
                 });
+
+
+
+
+
 
             }
         }
