@@ -4,14 +4,16 @@
 
             // Map options
             var options = {
-                zoom:5,
+                //zoom:5,
+                zoom: zoomIn,
                 styles: mapStyle
             }
                 
            
             var map = new google.maps.Map(document.getElementById('map'), {
                     options,
-                    center:{lat:-26.782387, lng:118.607513},
+                    //center:{lat:-26.782387, lng:118.607513},
+                    center: mapCentre,
                     gestureHandling: 'greedy'               
                     });
 
