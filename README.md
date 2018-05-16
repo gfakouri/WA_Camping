@@ -4,7 +4,7 @@
 ```
 www.scruffcamping.com
 ```
-A project to develop a website that to document the possible camping experiences available in Western Australia.
+A project to develop a website to document the possible camping experiences available in Western Australia.
 ## Ideas
 
 Several areas of interest were considered as a possible basis for the website.
@@ -17,7 +17,7 @@ Several areas of interest were considered as a possible basis for the website.
 
 
 
-* Gallery - Images we have taken
+* Gallery - Images we have taken.
 
 
 
