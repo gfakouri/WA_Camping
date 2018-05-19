@@ -1,3 +1,4 @@
+            
             // ARRAY OF MARKERS - LOCATION, ICON TYPE, MESSAGE BOX
             var markers = [
                 {
@@ -46,9 +47,14 @@
                     content:'<a href="index.html" class="locations">Yallingup</a>'
                 },
                 {
-                    coords:{lat:-27.7204, lng:114.1625},
+                    coords:{lat:-27.711665, lng:114.165480},
                     iconImage:"/icons/smallcity.png",
                     content:'<a href="index.html" class="locations">Kalbarri</a>'
+                },
+                {
+                    coords:{lat:-27.699944, lng:114.171338},
+                    iconImage:"/icons/tents.png",
+                    content:'<a href="index.html" class="locations">Kalbarri Anchorage Caravan Park</a>'
                 },
                 {
                     coords:{lat:-33.8608, lng:121.8896},
@@ -119,5 +125,10 @@
                     coords:{lat:-34.978048, lng:116.893544},
                     iconImage:"/icons/tree.png",
                     content:'<a href="index.html" class="locations">Valley of the Giants Tree Top Walk</a>'
+                },
+                {
+                    coords:{lat:-33.002629, lng:115.974505},
+                    iconImage:"/icons/tents.png",
+                    content:'<a href="index.html" class="locations">Lake Brockman Tourist Park</a>'
                 }
             ];

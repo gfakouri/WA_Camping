@@ -8,6 +8,7 @@
     <title>Map</title>
     <link rel="stylesheet" href="campingStyle.css">
     <link rel="stylesheet" href="locations.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 
 
     <style>
@@ -49,6 +50,27 @@
             transition: 1s;
         }
 
+        #floating-panel {
+            margin: 30px auto;
+            width: 50%;
+            text-align: center;
+            z-index: 5;
+            background-color: #282e34;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Lato','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+                   font-size: 27px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #fff; 
+            border-style: solid;
+            border-width: 5px;
+      }
+
+
     @media(max-width:569px){ 
 
     .navbar-nav {
@@ -62,7 +84,7 @@
     }
 
     #map {
-        height: 450px;
+        height: 500px;
     }
     
 }
@@ -110,10 +132,20 @@
 
     <h1><span class="border">Our Adventures</span></h1>
     <div id="map"></div>
-    
+    <div id="floating-panel">Directions<br>
 
 
 
+<form id="directions">
+    Start: <br>
+    <input type="text" name="start" id="start"><br>
+    End: <br>
+    <input type="text" name="end" id="end"><br>
+    <button id="subButton" type="button">Submit</button>
+
+</form>
+
+</div>
 
 <!--ZOOM LEVEL OF MAP API-->
     <script>var zoomIn = 5;</script>
@@ -129,6 +161,8 @@
 
 <!--FILE CONTAINING SCRIPT FOR MAP INITIATION-->
     <script src="js/map.js" ></script>
+
+
 
 <!--GOOGLE API SETUP WITH KEY-->    
     <script async defer
