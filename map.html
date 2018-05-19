@@ -13,13 +13,34 @@
 
     <style>
 
-        #map {         
+        .xClose {
+            text-decoration: none;
+            color: white;
+            font-size: 30px;
+        }
+
+        .slide{
+            height:70%;
+            width:0px;
+            position:fixed;
+            z-index:1;
+            top:2.5%;
+            left:2.5%;
+            background: #b8c3bb;
+            overflow-x:hidden;
+            padding-top:10px;
+            transition: 1s;        
+        }
+
+        #map { 
+       
             height:600px;
             width: 75%;
             border-style: solid;
             border-width: 5px;
             margin: 10px;
-            margin: 50px auto auto auto;       
+            margin: 50px auto auto auto;  
+            z-index: auto;     
         }
 
         #main-footer {
@@ -62,7 +83,7 @@
             font-family: 'Lato','sans-serif';
             line-height: 30px;
             padding-left: 10px;
-                   font-size: 27px;
+            font-size: 27px;
             letter-spacing: 8px;
             text-transform: uppercase;
             color: #fff; 
@@ -70,6 +91,35 @@
             border-width: 5px;
       }
 
+      #right-panel {
+        font-family: 'Lato','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+        position: absolute; 
+        z-index: 5;
+        color: white;
+      }
+
+      #right-panel select, #right-panel input {
+        font-size: 15px;
+        color: white;
+      }
+
+      #right-panel select {
+        width: 100%;
+        color: white;
+      }
+
+      #right-panel i {
+        font-size: 12px;
+        color: white;
+      }
+      #right-panel {
+        height: 50%;
+        float: right;
+        width: 300px;
+        color: white;
+      }
 
     @media(max-width:569px){ 
 
@@ -131,21 +181,43 @@
 
 
     <h1><span class="border">Our Adventures</span></h1>
-    <div id="map"></div>
+
+    <div id="popup" class="slide">
+            <a href="#" onclick="closeSlide()" class="xClose">&times;</a>
+            <div id="right-panel"></div>
+    </div>
+
+        <div id="map"></div>
+
+ 
+
     <div id="floating-panel">Directions<br>
 
+        <form id="directions">
+            Start: <br>
+            <input type="text" name="start" id="start"><br>
+            End: <br>
+            <input type="text" name="end" id="end"><br>
+            <button id="subButton" type="button" onclick="openSlide()">Submit
+                    
+            </button>
+        </form>
 
+    </div>
 
-<form id="directions">
-    Start: <br>
-    <input type="text" name="start" id="start"><br>
-    End: <br>
-    <input type="text" name="end" id="end"><br>
-    <button id="subButton" type="button">Submit</button>
-
-</form>
-
-</div>
+    <script>
+            function openSlide() {
+                document.getElementById("popup").style.width = "350px";
+                document.getElementById("popup").style.borderStyle = "solid";
+                document.getElementById("popup").style.borderWidth = "5px";
+                document.getElementById("popup").style.borderColor = "#282e34";
+            }
+        
+            function closeSlide() {
+                document.getElementById("popup").style.width = "0px";
+                document.getElementById("popup").style.borderWidth = "0px";
+            }
+        </script>
 
 <!--ZOOM LEVEL OF MAP API-->
     <script>var zoomIn = 5;</script>

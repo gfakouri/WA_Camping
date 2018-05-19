@@ -17,6 +17,8 @@ function initMap() {
    
     directionsDisplay.setMap(map);
 
+    directionsDisplay.setPanel(document.getElementById('right-panel'));
+
     setMarkers(map);
 
     var goThere = function () {calcRoute(directionsService, directionsDisplay);};
@@ -42,6 +44,10 @@ function initMap() {
       if (status == 'OK') {
         directionsDisplay.setDirections(result);
       }
+      else {
+        window.alert('Directions request failed due to ' + status);
+      }
+
     });
   }
 
