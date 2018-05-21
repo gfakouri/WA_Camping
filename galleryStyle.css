@@ -97,11 +97,17 @@ body,
                                 "photo9 photo9 photo11 photo11"
                                 "photo12 photo13 photo13 photo14"
                                 "photo12 photo13 photo13 photo15"
-                                "photo12 photo16 photo16 photo16";
+                                "photo12 photo16 photo16 photo16"
+                                "photo17 photo17 photo18 photo18"
+                                "photo17 photo17 photo19 photo20"
+                                "photo21 photo21 photo19 photo22"
+                                "photo23 photo24 photo25 photo25"
+                                "photo23 photo26 photo25 photo25"
+                                "photo23 photo27 photo27 photo27";
         padding: 14px;
         }
 
-    .photo1, .photo2, .photo3, .photo4, .photo5, .photo6, .photo7, .photo8, .photo9, .photo10, .photo11, .photo12, .photo13, .photo14, .photo15, .photo16 {
+    .photo1, .photo2, .photo3, .photo4, .photo5, .photo6, .photo7, .photo8, .photo9, .photo10, .photo11, .photo12, .photo13, .photo14, .photo15, .photo16, .photo17, .photo18, .photo19, .photo20, .photo21, .photo22, .photo23, .photo24, .photo25, .photo26, .photo27  {
 
         outline: 2px solid #282e34;
         outline-offset: 5px;
@@ -236,6 +242,94 @@ body,
         background-position: center;
     }
 
+    .photo17 {
+        grid-area: photo17;
+        background: url("/camping_images/tree5.jpg");
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photo18 {
+        grid-area: photo18;
+        background: url("/camping_images/denham.jpg");
+        min-height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photo19 {
+        grid-area: photo19;
+        background: url("/camping_images/ravine.jpg");
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photo20 {
+        grid-area: photo20;
+        background: url("/camping_images/scruff.jpg");
+        min-height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photo21 {
+        grid-area: photo21;
+        background: url("/camping_images/dune.jpg");
+        min-height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photo22 {
+        grid-area: photo22;
+        background: url("/camping_images/seagul.jpg");
+        min-height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photo23 {
+        grid-area: photo23;
+        background: url("/camping_images/ravine2.jpg");
+        min-height: 600px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photo24 {
+        grid-area: photo24;
+        background: url("/camping_images/cliff.jpg");
+        min-height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photo25 {
+        grid-area: photo25;
+        background: url("/camping_images/rock.jpg");
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photo26 {
+        grid-area: photo26;
+        background: url("/camping_images/sunset2.jpg");
+        min-height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .photo27 {
+        grid-area: photo27;
+        background: url("/camping_images/esperance.jpg");
+        min-height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
     .ptext {
         position: absolute;
         top: 50%;
@@ -294,9 +388,18 @@ body,
                                     "photo13"
                                     "photo14"
                                     "photo15"
-                                    "photo16";
-
-
+                                    "photo16"
+                                    "photo17"
+                                    "photo18"
+                                    "photo19"
+                                    "photo20"
+                                    "photo21"
+                                    "photo22"
+                                    "photo23"
+                                    "photo24"
+                                    "photo25"
+                                    "photo26"
+                                    "photo27";
             
             padding: 20px;
             }
