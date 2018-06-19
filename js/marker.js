@@ -19,7 +19,7 @@
                 {
                     coords:{lat:-25.9269, lng:113.5339},
                     iconImage:"/icons/smallcity.png",
-                    content:'<a href="inex.html" class="locations">Denham</a>'
+                    content:'<a href="index.html" class="locations">Denham</a>'
                 },
                 {
                     coords:{lat:-35.0275, lng:117.884},
